@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" thread-count="3" parallel="classes">
+    <test verbose="2" preserve-order="true" name="C:\ss\WebAutomation">
+        <classes>
+            <class name="testcases.TestCheckOut">
+                <methods>
+                    <include name="purchaseProduct"/>
+                </methods>
+            </class>
+            <class name="testcases.TestLogin">
+                <methods>
+                    <include name="testLoginWithValidCredentials"/>
+                    <exclude name="testLoginWithInvalidPassword"/>
+                    <exclude name="testLoginWithInvalidUsername"/>
+                    <exclude name="testLoginWithInvalidUsernamePassword"/>
+                    <exclude name="testLoginWithoutPassword"/>
+                    <include name="testLoginWithoutUsername"/>
+                    <include name="testLoginWithoutUsernamePassword"/>
+                    <exclude name="testLoginWithInvalidCredentials"/>
+                </methods>
+            </class>
+            <class name="testcases.TestProductPage">
+                <methods>
+                    <include name="testProductDetails"/>
+                    <include name="testAddCart"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
